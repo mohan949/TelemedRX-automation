@@ -28,6 +28,7 @@ public class TestCasesSprint11 extends Testbase {
 	public static void launchIntroPage() {
 		try {
 			SoftAssert softassert;
+			driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL +"t");
 
 			driver.navigate().to("http://devportal.telemedrx.in/");
 			String URL = driver.getCurrentUrl();
@@ -305,7 +306,6 @@ public class TestCasesSprint11 extends Testbase {
 
 			//	driver.findElement(By.xpath("//p[contains(text(),'Privacy and Terms of Use')]")).sendKeys(Keys.CONTROL + "w");
 			//	driver.navigate().back();
-
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			System.out.println(e.getCause());

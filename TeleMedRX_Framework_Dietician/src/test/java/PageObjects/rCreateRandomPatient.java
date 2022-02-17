@@ -31,17 +31,15 @@ public class rCreateRandomPatient extends Testbase {
 		SoftAssert softassert;
 
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//body/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/div[1]/a[1]/span[1]")))
-		.click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(prop.getProperty("Client")))).click();
 		Thread.sleep(500);
 
 
-		WebElement addpatient = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//body/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]")));
+		WebElement addpatient = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//body/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]").className("ti-plus")));
 		addpatient.click();
-
 		Select title = new Select(driver.findElement(By.id("form_title")));
 		title.selectByVisibleText("Mrs.");
-
+		//body/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/img[1]
 		// patient names
 			//vRandromFirstName = randomStringForm();
 		//driver.findElement(By.id("form_firstname")).sendKeys(vRandromFirstName);

@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -15,15 +16,19 @@ public class LoginPage extends Testbase {
 	
 	public static void Doctorloginform() throws IOException
 	{
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+
 
 		driver.get("http://devportal.telemedrx.in/app/");
 		
 		
 		// window size
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		//login
 		//username
-		driver.findElement(By.xpath(prop.getProperty("Username"))).sendKeys(prop.getProperty("DoctorUsername"));
+		//wait.until(ExpectedConditions.elementToBeClickable(By.(prop.getProperty("Username")))).sendKeys(prop.getProperty("DoctorUsername"));
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(prop.getProperty("Username")))).sendKeys(prop.getProperty("DoctorUsername"));
 		//password
 		driver.findElement(By.xpath(prop.getProperty("Password"))).sendKeys(prop.getProperty("DoctorPassword"));
 		//Login click

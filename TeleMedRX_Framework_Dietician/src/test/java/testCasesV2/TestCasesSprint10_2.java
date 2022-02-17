@@ -17,14 +17,13 @@ public class TestCasesSprint10_2 extends Testbase {
 
 			LoginPage.Doctorloginform();
 			SelectAnyClinicLocation.selectclinic();
-		//rCreatedrandomPatientAppointment.appointment();	
-		//	rCreatedrandomPatientAppointment.CreateAappointment();
+		
 
 	}
 	
 	
 	@Test(priority = 0)
-	public void TLMDRx_027() throws InterruptedException {
+	public static void TLMDRx_027() throws InterruptedException {
 		
 		
 		try {

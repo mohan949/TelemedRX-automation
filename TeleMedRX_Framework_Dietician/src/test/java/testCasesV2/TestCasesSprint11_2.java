@@ -4,6 +4,7 @@
 package testCasesV2;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -26,7 +27,12 @@ public class TestCasesSprint11_2 extends Testbase {
 		try {
 			
 			WebDriverWait wait = new WebDriverWait(driver, 30);
+		
+	
+			driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL +"t");
 
+			
+			//driver.switchTo().window(tabs.get(1)); 
 			driver.navigate().to("http://devportal.telemedrx.in/");
 			String URL = driver.getCurrentUrl();
 			System.out.println("Url Launched is for  11_2 :"+URL);
@@ -223,7 +229,7 @@ public class TestCasesSprint11_2 extends Testbase {
 		System.out.println(TestExistActual23);
 		
 		System.out.println("Asserted :-" +TestExistActual23 );
-		String TestExistexp23 = "NEXT";
+		String TestExistexp23 = "NEX";
 
 		softassert = new SoftAssert();		
 

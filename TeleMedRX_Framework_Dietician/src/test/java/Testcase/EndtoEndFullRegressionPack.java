@@ -814,8 +814,10 @@ public class EndtoEndFullRegressionPack extends Testbase {
 						try {
 
 							vExpectedStaffLabel = xlTD1[i][31];
-							vActualStaffLabel = driver.findElement(By.xpath(prop.getProperty("staffLable"))).getText();
+							//vActualStaffLabel = driver.findElement(By.xpath(prop.getProperty("staffLable"))).getText();
+							vActualStaffLabel = driver.findElement(By.xpath(("//body/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/span[2]"))).getText();
 
+							
 							if (vActualStaffLabel.equalsIgnoreCase(vExpectedStaffLabel)) {
 
 								String name = "Pass";

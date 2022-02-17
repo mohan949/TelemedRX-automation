@@ -7,6 +7,7 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -30,12 +31,9 @@ public class SelectAnyClinicLocation extends Testbase {
 
 			Select drpClinic = new Select(driver.findElement(By.tagName("select")));
 		 	drpClinic.selectByIndex(1);
-		
 		 	//System.out.println(drpClinic.getOptions().size());
-		
-		
-		
-
+		 	
+		 	
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			System.out.println(e.getCause());

@@ -3,12 +3,12 @@
 <suite configfailurepolicy="continue" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="testCasesV2.TestCasesSprint10_2">
+      <class name="testCasesV2.TestCasesSprint11_2">
         <methods>
           <include name="initial"/>
-          <include name="intials"/>
+          <include name="TLMDRx_070"/>
         </methods>
-      </class> <!-- testCasesV2.TestCasesSprint10_2 -->
+      </class> <!-- testCasesV2.TestCasesSprint11_2 -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

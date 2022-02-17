@@ -9,6 +9,7 @@ import java.util.List;
 import org.testng.TestNG;
 
 import TestCasesV1.testcaseSelectClinic;
+import testCasesV2.TestCasesSprint11;
 
 /**
  * @author mohan
@@ -31,7 +32,7 @@ public class MainRunner {
 		 * ablove code is for running whole testNG.xml file
 		 */		
 		
-		testng.setTestClasses(new Class[] { blog.class}); 
+		testng.setTestClasses(new Class[] { TestCasesSprint11.class}); 
 		
 		
 		testng.run();

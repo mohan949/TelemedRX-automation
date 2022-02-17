@@ -45,24 +45,7 @@ public class TestCasesSprint10 extends Testbase{
 	@Test(priority = 0)
 	public void TLMDRx_001() throws Throwable {
 
-		//SelectAnyClinicLocation.selectclinic();
-		//rCreatedrandomPatientAppointment.appointment();	
-		//LoginPage jjj = new LoginPage();
-		//jjj.Doctorloginform();
-
-		/*
-		 * WebDriverWait wait = new WebDriverWait(driver, 10); boolean
-		 * clinicSelectConfirm = wait.until(ExpectedConditions.elementToBeClickable(By.
-		 * xpath("//div[contains(text(),'Confirm Clinic Location:')]\r\n" +
-		 * ""))).isDisplayed(); if (clinicSelectConfirm==true) {
-		 * Assert.assertTrue(true); System.out.println("TestCase_Pass"); } else {
-		 * 
-		 * captureScreen(driver,"SelectAnyClinicLocation");
-		 * 
-		 * Assert.assertTrue(false);
-		 * 
-		 * }
-		 */
+	
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		//isDisplayed() method returns boolean value either True or False
 		Boolean Display = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'Confirm Clinic Location:')]"))).isDisplayed();
