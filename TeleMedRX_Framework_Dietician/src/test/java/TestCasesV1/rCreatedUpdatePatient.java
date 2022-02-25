@@ -44,7 +44,9 @@ public class rCreatedUpdatePatient extends Testbase {
 
 		driver.navigate().refresh();
 		WebDriverWait wait = new WebDriverWait(driver, 50);
-		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(prop.getProperty("css")))).click();
+		//wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(prop.getProperty("css")))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(prop.getProperty("Client")))).click();
+
 		Thread.sleep(2000);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='searchBar']")))
 		.sendKeys(vRandromFirstName);

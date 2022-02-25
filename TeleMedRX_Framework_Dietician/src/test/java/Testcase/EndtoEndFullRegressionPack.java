@@ -802,7 +802,7 @@ public class EndtoEndFullRegressionPack extends Testbase {
 		{
 
 			Thread.sleep(2000);
-			driver.findElement(By.xpath(prop.getProperty("staffLaftNav"))).click();
+			driver.findElement(By.xpath(prop.getProperty("staffLaftNav1"))).click();
 
 			// Step 1 run for loop for testdata sheet
 			for (int i = 1; i < XlRowCount; i++) {

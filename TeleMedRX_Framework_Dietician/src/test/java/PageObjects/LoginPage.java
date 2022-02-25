@@ -28,9 +28,9 @@ public class LoginPage extends Testbase {
 		//username
 		//wait.until(ExpectedConditions.elementToBeClickable(By.(prop.getProperty("Username")))).sendKeys(prop.getProperty("DoctorUsername"));
 
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(prop.getProperty("Username")))).sendKeys(prop.getProperty("DoctorUsername"));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(prop.getProperty("Username")))).sendKeys(prop.getProperty("DoctorUsernameP"));
 		//password
-		driver.findElement(By.xpath(prop.getProperty("Password"))).sendKeys(prop.getProperty("DoctorPassword"));
+		driver.findElement(By.xpath(prop.getProperty("Password"))).sendKeys(prop.getProperty("DoctorPasswordP"));
 		//Login click
 		
 		driver.findElement(By.xpath("//div[contains(text(),'LOGIN')]")).click(); 

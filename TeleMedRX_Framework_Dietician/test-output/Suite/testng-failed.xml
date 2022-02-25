@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite configfailurepolicy="continue" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="Testcase.Reporting"/>
+  </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="testCasesV2.TestCasesSprint11_2">
+      <class name="testCasesV2.TestCasesSprint10">
         <methods>
           <include name="initial"/>
-          <include name="TLMDRx_070"/>
+          <include name="TLMDRx_001"/>
         </methods>
-      </class> <!-- testCasesV2.TestCasesSprint11_2 -->
+      </class> <!-- testCasesV2.TestCasesSprint10 -->
+      <class name="testCasesV2.TestCasesSprint10_2">
+        <methods>
+          <include name="initial"/>
+          <include name="intials"/>
+        </methods>
+      </class> <!-- testCasesV2.TestCasesSprint10_2 -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

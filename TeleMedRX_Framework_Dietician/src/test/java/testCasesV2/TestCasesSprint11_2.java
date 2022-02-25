@@ -13,6 +13,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 import Testbase.Testbase;
 
 /**
@@ -99,13 +102,13 @@ public class TestCasesSprint11_2 extends Testbase {
 	
 		
 		Boolean label3 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'CONTINUE')]"))).isDisplayed();
-		System.out.println("Register label is :"+label3);
+		System.out.println("Continue  label is Displayed :"+label3);
 		
 		Boolean label = driver.findElement(By.xpath("//label[contains(text(),'Register')]")).isDisplayed();
-		System.out.println("Register label is :"+label);
+		System.out.println("Register label is Displayed :"+label);
 		
 		Boolean label2 = driver.findElement(By.xpath("//input[@id='mobile_no']")).isDisplayed();
-		System.out.println("Register label is :"+label2);
+		System.out.println("Mobile no label is Displayed:"+label2);
 		
 		TestCasesSprint11.clickforgetback();
 
@@ -124,6 +127,10 @@ public class TestCasesSprint11_2 extends Testbase {
 	public void TLMDRx_067() {
 		
 		try {
+			
+			
+		
+
 
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 
@@ -200,7 +207,7 @@ public class TestCasesSprint11_2 extends Testbase {
 	
 	@Test(priority = 4)
 
-	public void TLMDRx_071() {
+	public void TLMDRx_071_Register() {
 		
 		Boolean f = driver.findElement(By.xpath("//span[@id='prepend_mobile']")).isDisplayed();
 		System.out.println("+91 is Displayed"+f);
@@ -209,7 +216,7 @@ public class TestCasesSprint11_2 extends Testbase {
 	}
 	
 	@Test(priority = 5)
-	public void TLMDRx_070() {
+	public void TLMDRx_070__Register(){
 		SoftAssert softassert;
 		try {
 

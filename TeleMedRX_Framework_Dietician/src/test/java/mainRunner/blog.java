@@ -3,46 +3,59 @@ package mainRunner;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
+import org.testng.log4testng.Logger;
 
-public class blog {
-	
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
+import TestCasesV1.testcaseSSettingModule;
+import TestCasesV1.testcaseSelectClinic;
+import Testbase.Testbase;
+import net.bytebuddy.implementation.FieldAccessor.PropertyConfigurable;
+
+public class blog extends Testbase{
+
+	;
+
+
+
 	@Test
-	public void signup() {
-		System.setProperty("webdriver.chrome.driver",
-				System.getProperty("user.dir") + "\\src\\test\\resources\\I2E_Browsers\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
+	public static void signup() throws InterruptedException  {
 
-		// launchwebsite
-		driver.navigate().to("http://devportal.telemedrx.in/app/");
+		WebDriverWait wait = new WebDriverWait(driver, 10);
 
-		// window size
-		driver.manage().window().maximize();
 
-		/*
-		 * // click signup
-		 * driver.findElement(By.xpath("//body/div[2]/div[1]/a[2]")).click();
-		 * 
-		 * // username
-		 * //driver.findElement(By.xpath("//input[@id='user_username']")).sendKeys(
-		 * "Mohan");
-		 * 
-		 * // password
-		 * //driver.findElement(By.xpath("//input[@id='user_password']")).sendKeys(
-		 * "Mohan123@");
-		 * 
-		 * // email
-		 * //driver.findElement(By.xpath("//input[@id='user_email']")).sendKeys(
-		 * "Mohan123@gmail.com");
-		 * 
-		 * // click sign up
-		 * driver.findElement(By.className("btn btn-success btn-lg active")).click();
-		 */
-		
-		driver.quit();
+
+;
+
+
+		ExtentTest test = extent.createTest("Class test1", "Testbase test");
+
+
+		testcaseSelectClinic.Login();
+		testcaseSelectClinic.Clinic();
+
+		test.log(Status.INFO, "After login and selecting clinc and doctor");
+
+		String a = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//select[@id='form_category']"))).getText();
+		System.out.println(a);
+		logger.info("category");
+
+		//driver.quit();
+		//test.pass("driver close");
+
+		test.info("Sucessful implemented report");
+		extent.flush();
+
 
 	}
 	
-	
+
+
 
 }

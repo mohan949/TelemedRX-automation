@@ -4,6 +4,7 @@
 package PageObjects;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -24,14 +25,41 @@ public class SelectAnyClinicLocation extends Testbase {
 	@Test
 	public static void selectclinic() throws InterruptedException, IOException {
 		Thread.sleep(1000);
-		// Select(driver.findElement(By.xpath("//select[@id='']")));
-		// drpClinic.selectByVisibleText("Trivandrum-Health clinic");
+		
 
 		try {
 
-			Select drpClinic = new Select(driver.findElement(By.tagName("select")));
-		 	drpClinic.selectByIndex(1);
+			WebElement ClinicDropDown = driver.findElement(By.tagName("select"));
+			Select drpClinic = new Select(ClinicDropDown);
+			
+			
+			List<WebElement> c = drpClinic.getAllSelectedOptions();
+			
+			int totalClinic = c.size();
+			System.out.println("Number of  clinic Present are : "+totalClinic);
+			
+			for(WebElement d:c) {
+				
+				String p = d.getText();
+				System.out.println("new"+p);
+				
+			}
+			
+			if(driver.findElements(By.xpath("//div[contains(text(),'Confirm Clinic Location:')]")).size() > 0) {
+				
+				drpClinic.selectByIndex(1);
+			   // System.out.println("if loop pass");
+			    
+			    
+			} else 
+			{
+			    System.out.println("Default Clinic Selected");
+			}
+			
+		 	//drpClinic.selectByIndex(1);
+		 	//drpClinic.selectByValue("1");
 		 	//System.out.println(drpClinic.getOptions().size());
+		 	
 		 	
 		 	
 		} catch (Exception e) {
@@ -40,15 +68,7 @@ public class SelectAnyClinicLocation extends Testbase {
 			e.printStackTrace();
 		}
 
-		// Thread.sleep(1000);
-		// driver.findElement(By.xpath("//span[contains(text(),'OPEN')]")).click();
-
-		
-
 	
-		
-		
-		//driver.quit();
 	}
 
 	

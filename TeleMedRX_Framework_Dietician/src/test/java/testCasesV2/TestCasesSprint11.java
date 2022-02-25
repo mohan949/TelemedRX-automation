@@ -15,6 +15,10 @@ import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 import Testbase.Testbase;
 
 /**
@@ -22,11 +26,17 @@ import Testbase.Testbase;
  *
  */
 public class TestCasesSprint11 extends Testbase {
+
 	SoftAssert softassert;
 
 	@Test(priority = 0)
 	public static void launchIntroPage() {
 		try {
+			
+	
+
+
+
 			SoftAssert softassert;
 			driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL +"t");
 
@@ -36,7 +46,10 @@ public class TestCasesSprint11 extends Testbase {
 			softassert = new SoftAssert();
 			softassert.assertEquals(URL, "http://devportal.telemedrx.in/" );
 			System.out.println("Url Launched is :"+URL);
-			softassert.assertAll();
+			softassert.assertAll();		
+			extent.flush();
+
+			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			System.out.println(e.getCause());
@@ -49,8 +62,13 @@ public class TestCasesSprint11 extends Testbase {
 
 
 	@Test(priority = 1)	
-	public static void TLMDRx_049() {
+	public static void TLMDRx_049_Login() {
 
+		
+		
+		
+
+		
 		driver.navigate().refresh();
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 
@@ -69,11 +87,14 @@ public class TestCasesSprint11 extends Testbase {
 		System.out.println(password);
 		Boolean Login = driver.findElement(By.xpath(prop.getProperty("Login_button"))).isEnabled();
 		System.out.println(Login);
+		
+		extent.flush();
+
 	}
 
 	@Test(priority = 2)	
 
-	public void TLMDRx_050() {
+	public void TLMDRx_050_Login() {
 		WebElement forgetuser =	driver.findElement(By.xpath(prop.getProperty("Forgot_Username")));
 		String forgetstring = forgetuser.getText();
 		System.out.println(forgetstring);
@@ -85,11 +106,11 @@ public class TestCasesSprint11 extends Testbase {
 
 	@Test(priority = 3)	
 
-	public void TLMDRx_051() {
+	public void TLMDRx_051_Login() {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 
 		try {
-			driver.findElement(By.xpath(prop.getProperty("Forgot_Username"))).click();
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(prop.getProperty("Forgot_Username")))).click();
 
 			String forgetlabel = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(("//label[contains(text(),'Forgot Username')]")))).getText();
 
@@ -134,7 +155,7 @@ public class TestCasesSprint11 extends Testbase {
 	}
 
 	@Test(priority = 4)
-	public void TLMDRx_052() {
+	public void TLMDRx_052_Login() {
 		try {
 
 			Boolean forgetMobile =	driver.findElement(By.xpath("//input[@id='mobile_no']")).isEnabled();

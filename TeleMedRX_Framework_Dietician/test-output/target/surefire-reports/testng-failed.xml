@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite configfailurepolicy="continue" thread-count="2" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <listeners>
+    <listener class-name="Testcase.Reporting"/>
+  </listeners>
+  <test thread-count="2" parallel="tests" name="Test10(failed)" verbose="0">
+    <classes>
+      <class name="testCasesV2.TestCasesSprint11_2">
+        <methods>
+          <include name="initial"/>
+          <include name="TLMDRx_071_Register"/>
+        </methods>
+      </class> <!-- testCasesV2.TestCasesSprint11_2 -->
+      <class name="testCasesV2.TestCasesSprint11">
+        <methods>
+          <include name="TLMDRx_050_Login"/>
+          <include name="TLMDRx_055"/>
+          <include name="initial"/>
+          <include name="clickforgetback"/>
+        </methods>
+      </class> <!-- testCasesV2.TestCasesSprint11 -->
+    </classes>
+  </test> <!-- Test10(failed) -->
+</suite> <!-- Failed suite [Suite] -->

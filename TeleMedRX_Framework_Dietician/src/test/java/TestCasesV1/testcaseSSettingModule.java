@@ -23,7 +23,7 @@ import Testcase.EndtoEndFullRegressionPack;
 public class testcaseSSettingModule extends Testbase{
 
 
-	@Test(priority = 0)
+	@Test(priority = 2)
 	public void patientForCalendarTestcase() {
 		
 	
@@ -34,7 +34,7 @@ public class testcaseSSettingModule extends Testbase{
 		
 	}
 	
-	public void testcaseSettings_ALLButtonsAreWorking() {
+	public static void testcaseSettings_ALLButtonsAreWorking() {
 		
 		
 		
@@ -44,9 +44,9 @@ public class testcaseSSettingModule extends Testbase{
 	
 	
 
-	@Test(priority = 1)
+	@Test(priority = 3)
 
-	public  void testcasequotes() throws Exception {
+	public static  void testcasequotes() throws Exception {
 
 		SoftAssert softassert;
 
@@ -55,23 +55,16 @@ public class testcaseSSettingModule extends Testbase{
 		//select settings
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(prop.getProperty("settingsButton")))).click();
-		//logger.info("setting button clicked");
 
 
 
-		//		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(prop.getProperty("clinicsettingbutton")))).click();
-		//		
-		//		
-		//		
-		//		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(prop.getProperty("addclinicbutton")))).click();
-
-
+		
 
 
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Quotes Settings"))).click();
 
-
+		driver.navigate().refresh();
 
 
 		WebElement footernote =	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Save')]")));

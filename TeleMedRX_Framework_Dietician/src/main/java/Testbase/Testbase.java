@@ -11,6 +11,8 @@ import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 //import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
@@ -21,11 +23,18 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.model.Log;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.google.common.collect.Table.Cell;
 
 public class Testbase {
@@ -61,13 +70,19 @@ public class Testbase {
 	
 	
 	public static String vRandromFirstName;
-
+	public static Logger logger;
 	
+	public static  ExtentHtmlReporter htmlReporter;
+	public static ExtentReports extent;
+	//public static ExtentTest logger;
+	
+
+
 	public static String fName, lName, mobNo;
 	public static int XlRowCount,XlRowCount1,XlRowCount2,XlRowCount3, XLReportCount, xRows, xCols;
 	public static String arraycount;
 
-	@BeforeTest
+	@BeforeTest 
 	public void initial() throws Exception {
 		// Step 1
 		file = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\Properties\\Config.properties");
@@ -103,6 +118,21 @@ public class Testbase {
 				System.getProperty("user.dir") + "\\src\\test\\resources\\I2E_Browsers\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
+		
+		
+		logger = Logger.getLogger("Log_test_extend_report_Mohan");
+		PropertyConfigurator.configure("Log4j.properties");
+		
+		
+
+		htmlReporter = new ExtentHtmlReporter("extent_report"+ GetCurrentTimeStamp().replace(":", "_").replace(".", "_")+".html");
+
+
+		extent = new ExtentReports();
+		extent.attachReporter(htmlReporter);
+		
+		
+		
 	}
 	
 	// Below 2 methods are used for taking screenshot
@@ -236,8 +266,7 @@ public class Testbase {
 		String generatednumber = RandomStringUtils.randomNumeric(2);
 		return (generatednumber);
 
-	
-	
+
 	
 	}
 	
@@ -246,9 +275,9 @@ public class Testbase {
 		String generatednumber = RandomStringUtils.randomNumeric(7);
 		return (generatednumber);
 
-	
-	
+
 	
 	}
 	
+
 }

@@ -1,78 +1,57 @@
-package Testcase;
-
-import java.io.IOException;
+package  Testcase;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.log4testng.Logger;
 
-import PageObjects.LoginPage;
-import PageObjects.SelectAnyClinicLocation;
-import TestCasesV1.rCreatedrandomPatientAppointment;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
+import TestCasesV1.testcaseSelectClinic;
 import Testbase.Testbase;
+import net.bytebuddy.implementation.FieldAccessor.PropertyConfigurable;
 
-public class test300 extends Testbase{
-
-
-
-
-	@Test(priority = 0)
-	public void TLMDRx_001() throws Throwable {
-
-		//SelectAnyClinicLocation.selectclinic();
-		//rCreatedrandomPatientAppointment.appointment();	
-		//LoginPage jjj = new LoginPage();
-		//jjj.Doctorloginform();
-		LoginPage.Doctorloginform();
-
-		/*
-		 * WebDriverWait wait = new WebDriverWait(driver, 10); boolean
-		 * clinicSelectConfirm = wait.until(ExpectedConditions.elementToBeClickable(By.
-		 * xpath("//div[contains(text(),'Confirm Clinic Location:')]\r\n" +
-		 * ""))).isDisplayed(); if (clinicSelectConfirm==true) {
-		 * Assert.assertTrue(true); System.out.println("TestCase_Pass"); } else {
-		 * 
-		 * captureScreen(driver,"SelectAnyClinicLocation");
-		 * 
-		 * Assert.assertTrue(false);
-		 * 
-		 * }
-		 */
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		//isDisplayed() method returns boolean value either True or False
-		Boolean Display = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'Confirm Clinic Location:')]"))).isDisplayed();
-		//To print the value
-		System.out.println("Element displayed is :"+Display);
+public class test300 extends Testbase  {
 
 
-		SelectAnyClinicLocation.selectclinic();
-		driver.navigate().refresh();
 
-	}
-	@Test(priority = 1 )
-	public void TLMDRx_002() throws Exception {
+		@Test
+		public void signup() throws InterruptedException  {
+
+			WebDriverWait wait = new WebDriverWait(driver, 10);
 
 
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+		        
 
-		//	Boolean Display = wait.until(ExpectedConditions.presenceOfElementLocated(By.linkText("Appointments - "))).isDisplayed();
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//th[contains(text(),'TIME')]"))).getText();
-		String Display1 = driver.findElement(By.xpath("//body/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/h4[1]")).getText();
-		System.out.println("Current Date :"+Display1);
-		Boolean Display = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//body/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/h4[1]"))).isDisplayed();
-		//To print the value
-		System.out.println("Element displayed is :"+Display);
 
-	}
 
-	@Test(priority = 2)
-	public void TLMDRx_003() throws Exception {
 
-		EndtoEndFullRegressionPack.Verify_AllLeftNavigationMenuBarListArePresent();
-		driver.quit();
+			testcaseSelectClinic.Login();
+			testcaseSelectClinic.Clinic();
 
-	}
+
+			String a = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//select[@id='form_category']"))).getText();
+			System.out.println(a);
+			logger.info("category");
+
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//body/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/a[1]"))).click();
+			logger.info("right side button");
+
+			driver.findElement(By.xpath("//a[contains(text(),'Sign Out!')]")).click();
+			Thread.sleep(3000);
+
+			driver.quit();
+
+
+
+		}
+
+	//}
+
 }

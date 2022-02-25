@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>16/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>19/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Feb 15 18:27:33 IST 2022</td>
+<td>Started on:</td><td>Thu Feb 24 17:08:16 IST 2022</td>
 </tr>
-<tr><td>Total time:</td><td>43 seconds (43636 ms)</td>
+<tr><td>Total time:</td><td>149 seconds (149029 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,17 +75,32 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='testCasesV2.TestCasesSprint11_2.TLMDRx_070()'><b>TLMDRx_070</b><br>Test class: testCasesV2.TestCasesSprint11_2</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	expected [NEX] but found [NEXT]
-	at testCasesV2.TestCasesSprint11_2.TLMDRx_070(TestCasesSprint11_2.java:255)
+<td title='testCasesV2.TestCasesSprint10.TLMDRx_001()'><b>TLMDRx_001</b><br>Test class: testCasesV2.TestCasesSprint10</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[contains(text(),&apos;Confirm Clinic Location:&apos;)] (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:113)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:283)
+	at testCasesV2.TestCasesSprint10.TLMDRx_001(TestCasesSprint10.java:51)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace810576909", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace810576909'><pre>java.lang.AssertionError: The following asserts failed:
-	expected [NEX] but found [NEXT]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at testCasesV2.TestCasesSprint11_2.TLMDRx_070(TestCasesSprint11_2.java:255)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //div[contains(text(),&apos;Confirm Clinic Location:&apos;)]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
+System info: host: &apos;I2E-LAP-MP03&apos;, ip: &apos;192.168.1.100&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:896)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:895)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:657)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:654)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:260)
+	... 29 more
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace145105559", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace145105559'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[contains(text(),&apos;Confirm Clinic Location:&apos;)] (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:113)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:283)
+	at testCasesV2.TestCasesSprint10.TLMDRx_001(TestCasesSprint10.java:51)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -114,9 +129,99 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //div[contains(text(),&apos;Confirm Clinic Location:&apos;)]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
+System info: host: &apos;I2E-LAP-MP03&apos;, ip: &apos;192.168.1.100&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:896)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:895)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:657)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:654)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:260)
+	... 29 more
 </pre></div></td>
-<td>3</td>
-<td>testCasesV2.TestCasesSprint11_2@2f7298b</td></tr>
+<td>10</td>
+<td>testCasesV2.TestCasesSprint10@16ec5519</td></tr>
+<tr>
+<td title='testCasesV2.TestCasesSprint10_2.intials()'><b>intials</b><br>Test class: testCasesV2.TestCasesSprint10_2</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //body/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/input[1] (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:113)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:283)
+	at PageObjects.LoginPage.Doctorloginform(LoginPage.java:31)
+	at testCasesV2.TestCasesSprint10_2.intials(TestCasesSprint10_2.java:18)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //body/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/input[1]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
+System info: host: &apos;I2E-LAP-MP03&apos;, ip: &apos;192.168.1.100&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:896)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:895)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:657)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:654)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:260)
+	... 30 more
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace566698125", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace566698125'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //body/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/input[1] (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:113)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:283)
+	at PageObjects.LoginPage.Doctorloginform(LoginPage.java:31)
+	at testCasesV2.TestCasesSprint10_2.intials(TestCasesSprint10_2.java:18)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //body/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/input[1]
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
+System info: host: &apos;I2E-LAP-MP03&apos;, ip: &apos;192.168.1.100&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.2&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:896)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:895)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:657)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:654)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:260)
+	... 30 more
+</pre></div></td>
+<td>10</td>
+<td>testCasesV2.TestCasesSprint10_2@1dde4cb2</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -126,85 +231,100 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='testCasesV2.TestCasesSprint11.TLMDRx_051()'><b>TLMDRx_051</b><br>Test class: testCasesV2.TestCasesSprint11</td>
+<td title='testCasesV2.TestCasesSprint10.TLMDRx_018()'><b>TLMDRx_018</b><br>Test class: testCasesV2.TestCasesSprint10</td>
+<td></td>
+<td>2</td>
+<td>testCasesV2.TestCasesSprint10@16ec5519</td></tr>
+<tr>
+<td title='testCasesV2.TestCasesSprint10.TLMDRx_006()'><b>TLMDRx_006</b><br>Test class: testCasesV2.TestCasesSprint10</td>
+<td></td>
+<td>3</td>
+<td>testCasesV2.TestCasesSprint10@16ec5519</td></tr>
+<tr>
+<td title='testCasesV2.TestCasesSprint10.TLMDRx_010()'><b>TLMDRx_010</b><br>Test class: testCasesV2.TestCasesSprint10</td>
+<td></td>
+<td>2</td>
+<td>testCasesV2.TestCasesSprint10@16ec5519</td></tr>
+<tr>
+<td title='testCasesV2.TestCasesSprint10_2.TLMDRx_030()'><b>TLMDRx_030</b><br>Test class: testCasesV2.TestCasesSprint10_2</td>
+<td></td>
+<td>10</td>
+<td>testCasesV2.TestCasesSprint10_2@1dde4cb2</td></tr>
+<tr>
+<td title='testCasesV2.TestCasesSprint10.TLMDRx_012()'><b>TLMDRx_012</b><br>Test class: testCasesV2.TestCasesSprint10</td>
+<td></td>
+<td>12</td>
+<td>testCasesV2.TestCasesSprint10@16ec5519</td></tr>
+<tr>
+<td title='testCasesV2.TestCasesSprint10.TLMDRx_020()'><b>TLMDRx_020</b><br>Test class: testCasesV2.TestCasesSprint10</td>
 <td></td>
 <td>0</td>
-<td>testCasesV2.TestCasesSprint11@708f5957</td></tr>
+<td>testCasesV2.TestCasesSprint10@16ec5519</td></tr>
 <tr>
-<td title='testCasesV2.TestCasesSprint11_2.TLMDRx_059()'><b>TLMDRx_059</b><br>Test class: testCasesV2.TestCasesSprint11_2</td>
+<td title='testCasesV2.TestCasesSprint10.TLMDRx_011()'><b>TLMDRx_011</b><br>Test class: testCasesV2.TestCasesSprint10</td>
+<td></td>
+<td>3</td>
+<td>testCasesV2.TestCasesSprint10@16ec5519</td></tr>
+<tr>
+<td title='testCasesV2.TestCasesSprint10_2.TLMDRx_027()'><b>TLMDRx_027</b><br>Test class: testCasesV2.TestCasesSprint10_2</td>
+<td></td>
+<td>2</td>
+<td>testCasesV2.TestCasesSprint10_2@1dde4cb2</td></tr>
+<tr>
+<td title='testCasesV2.TestCasesSprint10_2.TLMDRx_028()'><b>TLMDRx_028</b><br>Test class: testCasesV2.TestCasesSprint10_2</td>
+<td></td>
+<td>13</td>
+<td>testCasesV2.TestCasesSprint10_2@1dde4cb2</td></tr>
+<tr>
+<td title='testCasesV2.TestCasesSprint10.TLMDRx_004()'><b>TLMDRx_004</b><br>Test class: testCasesV2.TestCasesSprint10</td>
 <td></td>
 <td>0</td>
-<td>testCasesV2.TestCasesSprint11_2@2f7298b</td></tr>
+<td>testCasesV2.TestCasesSprint10@16ec5519</td></tr>
 <tr>
-<td title='testCasesV2.TestCasesSprint11_2.TLMDRx_067()'><b>TLMDRx_067</b><br>Test class: testCasesV2.TestCasesSprint11_2</td>
+<td title='testCasesV2.TestCasesSprint10.TLMDRx_023()'><b>TLMDRx_023</b><br>Test class: testCasesV2.TestCasesSprint10</td>
 <td></td>
 <td>0</td>
-<td>testCasesV2.TestCasesSprint11_2@2f7298b</td></tr>
+<td>testCasesV2.TestCasesSprint10@16ec5519</td></tr>
 <tr>
-<td title='testCasesV2.TestCasesSprint11.TLMDRx_052()'><b>TLMDRx_052</b><br>Test class: testCasesV2.TestCasesSprint11</td>
+<td title='testCasesV2.TestCasesSprint10.TLMDRx_007()'><b>TLMDRx_007</b><br>Test class: testCasesV2.TestCasesSprint10</td>
+<td></td>
+<td>3</td>
+<td>testCasesV2.TestCasesSprint10@16ec5519</td></tr>
+<tr>
+<td title='testCasesV2.TestCasesSprint10.TLMDRx_024()'><b>TLMDRx_024</b><br>Test class: testCasesV2.TestCasesSprint10</td>
+<td></td>
+<td>2</td>
+<td>testCasesV2.TestCasesSprint10@16ec5519</td></tr>
+<tr>
+<td title='testCasesV2.TestCasesSprint10_2.TLMDRx_029()'><b>TLMDRx_029</b><br>Test class: testCasesV2.TestCasesSprint10_2</td>
+<td></td>
+<td>20</td>
+<td>testCasesV2.TestCasesSprint10_2@1dde4cb2</td></tr>
+<tr>
+<td title='testCasesV2.TestCasesSprint10.TLMDRx_009()'><b>TLMDRx_009</b><br>Test class: testCasesV2.TestCasesSprint10</td>
+<td></td>
+<td>12</td>
+<td>testCasesV2.TestCasesSprint10@16ec5519</td></tr>
+<tr>
+<td title='testCasesV2.TestCasesSprint10.TLMDRx_003()'><b>TLMDRx_003</b><br>Test class: testCasesV2.TestCasesSprint10</td>
 <td></td>
 <td>0</td>
-<td>testCasesV2.TestCasesSprint11@708f5957</td></tr>
+<td>testCasesV2.TestCasesSprint10@16ec5519</td></tr>
 <tr>
-<td title='testCasesV2.TestCasesSprint11_2.TLMDRx_071()'><b>TLMDRx_071</b><br>Test class: testCasesV2.TestCasesSprint11_2</td>
+<td title='testCasesV2.TestCasesSprint10.TLMDRx_016()'><b>TLMDRx_016</b><br>Test class: testCasesV2.TestCasesSprint10</td>
+<td></td>
+<td>34</td>
+<td>testCasesV2.TestCasesSprint10@16ec5519</td></tr>
+<tr>
+<td title='testCasesV2.TestCasesSprint10.TLMDRx_017()'><b>TLMDRx_017</b><br>Test class: testCasesV2.TestCasesSprint10</td>
+<td></td>
+<td>2</td>
+<td>testCasesV2.TestCasesSprint10@16ec5519</td></tr>
+<tr>
+<td title='testCasesV2.TestCasesSprint10.TLMDRx_002()'><b>TLMDRx_002</b><br>Test class: testCasesV2.TestCasesSprint10</td>
 <td></td>
 <td>0</td>
-<td>testCasesV2.TestCasesSprint11_2@2f7298b</td></tr>
-<tr>
-<td title='testCasesV2.TestCasesSprint11.clickforgetback()'><b>clickforgetback</b><br>Test class: testCasesV2.TestCasesSprint11</td>
-<td></td>
-<td>1</td>
-<td>testCasesV2.TestCasesSprint11@708f5957</td></tr>
-<tr>
-<td title='testCasesV2.TestCasesSprint11.TLMDRx_055()'><b>TLMDRx_055</b><br>Test class: testCasesV2.TestCasesSprint11</td>
-<td></td>
-<td>1</td>
-<td>testCasesV2.TestCasesSprint11@708f5957</td></tr>
-<tr>
-<td title='testCasesV2.TestCasesSprint11.TLMDRx_049()'><b>TLMDRx_049</b><br>Test class: testCasesV2.TestCasesSprint11</td>
-<td></td>
-<td>0</td>
-<td>testCasesV2.TestCasesSprint11@708f5957</td></tr>
-<tr>
-<td title='testCasesV2.TestCasesSprint11.TLMDRx_056()'><b>TLMDRx_056</b><br>Test class: testCasesV2.TestCasesSprint11</td>
-<td></td>
-<td>0</td>
-<td>testCasesV2.TestCasesSprint11@708f5957</td></tr>
-<tr>
-<td title='testCasesV2.TestCasesSprint11.TLMDRx_054()'><b>TLMDRx_054</b><br>Test class: testCasesV2.TestCasesSprint11</td>
-<td></td>
-<td>0</td>
-<td>testCasesV2.TestCasesSprint11@708f5957</td></tr>
-<tr>
-<td title='testCasesV2.TestCasesSprint11_2.TLMDRx_069()'><b>TLMDRx_069</b><br>Test class: testCasesV2.TestCasesSprint11_2</td>
-<td></td>
-<td>0</td>
-<td>testCasesV2.TestCasesSprint11_2@2f7298b</td></tr>
-<tr>
-<td title='testCasesV2.TestCasesSprint11_2.TLMDRx_060()'><b>TLMDRx_060</b><br>Test class: testCasesV2.TestCasesSprint11_2</td>
-<td></td>
-<td>1</td>
-<td>testCasesV2.TestCasesSprint11_2@2f7298b</td></tr>
-<tr>
-<td title='testCasesV2.TestCasesSprint11.TLMDRx_053()'><b>TLMDRx_053</b><br>Test class: testCasesV2.TestCasesSprint11</td>
-<td></td>
-<td>0</td>
-<td>testCasesV2.TestCasesSprint11@708f5957</td></tr>
-<tr>
-<td title='testCasesV2.TestCasesSprint11.launchIntroPage()'><b>launchIntroPage</b><br>Test class: testCasesV2.TestCasesSprint11</td>
-<td></td>
-<td>30</td>
-<td>testCasesV2.TestCasesSprint11@708f5957</td></tr>
-<tr>
-<td title='testCasesV2.TestCasesSprint11.TLMDRx_050()'><b>TLMDRx_050</b><br>Test class: testCasesV2.TestCasesSprint11</td>
-<td></td>
-<td>0</td>
-<td>testCasesV2.TestCasesSprint11@708f5957</td></tr>
-<tr>
-<td title='testCasesV2.TestCasesSprint11.TLMDRx_057()'><b>TLMDRx_057</b><br>Test class: testCasesV2.TestCasesSprint11</td>
-<td></td>
-<td>0</td>
-<td>testCasesV2.TestCasesSprint11@708f5957</td></tr>
+<td>testCasesV2.TestCasesSprint10@16ec5519</td></tr>
 </table><p>
 </body>
 </html>
