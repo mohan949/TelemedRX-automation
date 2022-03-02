@@ -9,9 +9,8 @@
 			<class name="testCasesV2.TestCasesSprint10" />
 			<class name="testCasesV2.TestCasesSprint10_2" />
 
-
-
-
+			<class name="testCasesV2.TestCasesSprint11" />
+			<class name="testCasesV2.TestCasesSprint11_2" />
 
 		</classes>
 	</test> <!-- Test -->

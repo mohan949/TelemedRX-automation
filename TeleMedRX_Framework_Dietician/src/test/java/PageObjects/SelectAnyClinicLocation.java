@@ -9,7 +9,9 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -28,13 +30,14 @@ public class SelectAnyClinicLocation extends Testbase {
 		
 
 		try {
+			WebDriverWait wait = new WebDriverWait(driver, 10);
 
-			WebElement ClinicDropDown = driver.findElement(By.tagName("select"));
+			WebElement ClinicDropDown = wait.until(ExpectedConditions.elementToBeClickable(By.tagName("select")));
 			Select drpClinic = new Select(ClinicDropDown);
 			
 			
 			List<WebElement> c = drpClinic.getAllSelectedOptions();
-			
+				
 			int totalClinic = c.size();
 			System.out.println("Number of  clinic Present are : "+totalClinic);
 			
@@ -48,7 +51,6 @@ public class SelectAnyClinicLocation extends Testbase {
 			if(driver.findElements(By.xpath("//div[contains(text(),'Confirm Clinic Location:')]")).size() > 0) {
 				
 				drpClinic.selectByIndex(1);
-			   // System.out.println("if loop pass");
 			    
 			    
 			} else 
@@ -56,9 +58,6 @@ public class SelectAnyClinicLocation extends Testbase {
 			    System.out.println("Default Clinic Selected");
 			}
 			
-		 	//drpClinic.selectByIndex(1);
-		 	//drpClinic.selectByValue("1");
-		 	//System.out.println(drpClinic.getOptions().size());
 		 	
 		 	
 		 	

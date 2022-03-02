@@ -31,10 +31,18 @@ public class testcaseSCalendarModule extends Testbase {
 
 	@Test(priority = 0)
 	public void patientForCalendarTestcase() throws InterruptedException, IOException {
+		
+		try {
+
 		LoginPage.Doctorloginform();
 		SelectAnyClinicLocation.selectclinic();
 		rCreatedrandomPatientAppointment.appointment();	
 		rCreatedrandomPatientAppointment.CreateAappointment();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			System.out.println(e.getCause());			
+			e.printStackTrace();
+		}
 	}
 
 
@@ -44,20 +52,18 @@ public class testcaseSCalendarModule extends Testbase {
 
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(prop.getProperty("calendarbutton")))).click();
-		//driver.navigate().refresh();
 		Thread.sleep(1000);
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'week')]"))).click();
 		try {
-			
-		//	String calendarTestExistActual = wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText(vRandromFirstName+" automated"))).getText();
-		//driver.findElement(By.id("someID).getText().contains("textToSearch");
 
 			
+
+
 			String calendarTestExistActual = vRandromFirstName+" automated";
-			
+
 			wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText(vRandromFirstName+" automated"))).getText().contains(calendarTestExistActual);
-			
+
 			System.out.println("test calendar has been :-" +calendarTestExistActual );
 			String calendarTestExistexp = vRandromFirstName+" automated";
 			//String calendarTestExistexp = "failed";
@@ -103,7 +109,7 @@ public class testcaseSCalendarModule extends Testbase {
 
 
 	}
-	
+
 	@Test(priority = 2)
 	public static void calendarSlotsClick() {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -114,18 +120,18 @@ public class testcaseSCalendarModule extends Testbase {
 		System.out.println("This are the appointment details :"+details);
 	}
 
-	
-	
+
+
 	@Test(priority = 2)
 	public static void calendarSlotsClickExtra() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
-		
+
 		Boolean Display = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Start Consultation')]"))).isDisplayed();
 		//To print the value
 		System.out.println("Element displayed is :"+Display);
 
 
-		
+
 		String name = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//body/div[4]/div[1]/div[1]/div[1]/div[2]/div[1]/h6[1]"))).getText();
 		System.out.println("Name :"+name);
 		String Time = driver.findElement(By.xpath("//body/div[4]/div[1]/div[1]/div[1]/div[2]/div[2]/h6[1]")).getText();
@@ -134,48 +140,40 @@ public class testcaseSCalendarModule extends Testbase {
 		String Duration = driver.findElement(By.xpath("		//body/div[4]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[1]/span[1]\r\n"
 				+ "")).getText();
 		System.out.println("Duration :"+Duration);
-		
+
 		String AppType = driver.findElement(By.xpath("//body/div[4]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[2]/span[1]")).getText();
 		System.out.println("Appointment Type :"+AppType	);
 
-	
+
 	}
 	@Test(priority = 3)
 	public static void upateCalendarAppt() {
-		
-		WebDriverWait wait = new WebDriverWait(driver, 20);
 
-		
-	driver.findElement(By.xpath("//body/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/i[1]")).click();
-		
+		WebDriverWait wait = new WebDriverWait(driver, 50);
+
+
+		driver.findElement(By.xpath("//body/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/i[1]")).click();
+
 		Boolean Clinic = driver.findElement(By.xpath("//body/div[6]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/div[2]/div[1]/div[1]/input[1]")).isSelected();
 		System.out.println("Element selected is :"+Clinic);
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//body/div[6]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/div[2]/div[1]/div[2]/input[1]"))).click();
-		
+
 		WebElement updateApptDetails = driver.findElement(By.xpath("//button[contains(text(),'Update Appointment Details')]"));
-		//updateApptDetails.getText();
 		updateApptDetails.click();
-		//System.out.println(+updateApptDetails);
 		String upt = updateApptDetails.getText();
-		System.out.println(upt);
+		System.out.println("Appointment Changed to Video Type : "+upt);
+		driver.navigate().refresh();
+	//	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//body/div[30]/div[1]/div[1]/div[1]/div[1]/div[2]/i[1]"))).click();
 		
-		/*
-		 * wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
-		 * "//body/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/div[1]/a[1]/span[1]"
-		 * ))) .click(); Thread.sleep(3000); driver.quit();
-		 */
-		
-		
-		
+
+	
 	}
-	@Test(priority = 4)
+	
 	public static void calenarStartConsultation() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 50);
 		
-		//wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'week')]"))).click();
-	
-		//wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText(vRandromFirstName+" automated"))).click();
+
 
 		WebElement calsatr = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(prop.getProperty("startconsultButton"))));
 		Boolean calSta =	calsatr.isEnabled();
@@ -188,5 +186,6 @@ public class testcaseSCalendarModule extends Testbase {
 		Thread.sleep(2000);
 		
 	}
+
 
 }

@@ -29,7 +29,7 @@ public class rCreateRandomPatient extends Testbase {
 
 		driver.navigate().refresh();
 		SoftAssert softassert;
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 

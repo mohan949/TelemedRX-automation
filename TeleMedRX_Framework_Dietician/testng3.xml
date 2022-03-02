@@ -9,8 +9,8 @@
 	<test thread-count="5" name="Test">
 		<classes>
 			
-			<class name="Testcase.test300" />
-
+			<class name="testCasesV2.TestCasesSprint10_2" />
+			<class name="testCasesV2.TestCasesSprint11" />
 
 		</classes>
 	</test> <!-- Test -->

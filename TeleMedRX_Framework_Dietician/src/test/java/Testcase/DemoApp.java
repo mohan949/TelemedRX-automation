@@ -1,5 +1,6 @@
 package Testcase;
 
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -12,6 +13,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import PageObjects.LoginPage;
+import PageObjects.SelectAnyClinicLocation;
+import TestCasesV1.rCreatedrandomPatientAppointment;
 import TestCasesV1.testcaseSelectClinic;
 import Testbase.Testbase;
 
@@ -28,6 +32,10 @@ public class DemoApp extends Testbase {
 
 			testcaseSelectClinic.Login();
 			testcaseSelectClinic.Clinic();
+			rCreatedrandomPatientAppointment.appointment();	
+			rCreatedrandomPatientAppointment.CreateAappointment();
+			
+		
 		
 			String a = driver.findElement(By.xpath("//select[@id='form_category']")).getText();
 			System.out.println(a);

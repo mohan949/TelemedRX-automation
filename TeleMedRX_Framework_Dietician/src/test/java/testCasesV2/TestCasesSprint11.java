@@ -33,10 +33,6 @@ public class TestCasesSprint11 extends Testbase {
 	public static void launchIntroPage() {
 		try {
 			
-	
-
-
-
 			SoftAssert softassert;
 			driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL +"t");
 

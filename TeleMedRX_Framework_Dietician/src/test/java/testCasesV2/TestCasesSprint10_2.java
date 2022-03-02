@@ -1,5 +1,9 @@
 package testCasesV2;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import PageObjects.LoginPage;
@@ -77,13 +81,14 @@ public class TestCasesSprint10_2 extends Testbase {
 		try {
 					
 			testcaseSCalendarModule.upateCalendarAppt();
-			driver.quit();
 			} catch (Exception e) {
 			System.out.println(e.getMessage());
 			System.out.println(e.getCause());			
 			e.printStackTrace();
 		}
 	}
+	
+	
 	
 	public void TLMDRx_031() throws InterruptedException {
 		
@@ -97,4 +102,29 @@ public class TestCasesSprint10_2 extends Testbase {
 			e.printStackTrace();
 		}
 	}
+
+	
+	
+	
+	@Test(priority = 5)
+	public void backtologinPage() {
+		try {
+
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//body/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/a[1]"))).click();
+		
+		driver.findElement(By.xpath("//a[contains(text(),'Sign Out!')]")).click();
+		Thread.sleep(3000);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			System.out.println(e.getCause());			
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
+
+	
 }

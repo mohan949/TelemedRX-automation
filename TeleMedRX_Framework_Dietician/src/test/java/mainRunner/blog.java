@@ -41,7 +41,6 @@ public class blog extends Testbase{
 		testcaseSelectClinic.Clinic();
 
 		test.log(Status.INFO, "After login and selecting clinc and doctor");
-
 		String a = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//select[@id='form_category']"))).getText();
 		System.out.println(a);
 		logger.info("category");

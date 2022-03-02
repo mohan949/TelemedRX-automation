@@ -12,6 +12,12 @@
           <include name="TLMDRx_001"/>
         </methods>
       </class> <!-- testCasesV2.TestCasesSprint10 -->
+      <class name="testCasesV2.TestCasesSprint11_2">
+        <methods>
+          <include name="initial"/>
+          <include name="TLMDRx_070__Register"/>
+        </methods>
+      </class> <!-- testCasesV2.TestCasesSprint11_2 -->
       <class name="testCasesV2.TestCasesSprint10_2">
         <methods>
           <include name="initial"/>
